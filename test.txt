@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Move</title>
+    <style>
+        img {
+            width: 200px;
+            transition: transform 0.5s ease-in-out; /* Плавное движение */
+        }
+
+        .up {
+            transform: translateY(-20px); /* Движение вверх */
+        }
+
+        .down {
+            transform: translateY(20px); /* Движение вниз */
+        }
+    </style>
+</head>
+<body>
+    <img src="your-image.png" alt="Moving Image" id="image">
+    <button onclick="moveUp()">Up</button>
+    <button onclick="moveDown()">Down</button>
+
+    <script>
+        const img = document.getElementById('image');
+
+        function moveUp() {
+            img.classList.remove('down');
+            img.classList.add('up');
+        }
+
+        function moveDown() {
+            img.classList.remove('up');
+            img.classList.add('down');
+        }
+    </script>
+</body>
+</html>
